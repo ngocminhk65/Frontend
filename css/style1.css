@@ -176,5 +176,48 @@ nav ul li:nth-child(4) button i {
     height: auto; 
 }
 
+/* ------------ slide product1 ------------ */
 
+.slider-product-one-content {
+    background-color: #FFD400;
+    padding: 12px;
+}
+
+.slider-product-one-content-items {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.slider-product-one-content-item {
+    width: 19%;
+    background-color: #F4F4F4;
+    padding: 50px 12px 45px;
+    border-radius: 5px;
+}
+
+.slider-product-one-content-item img{
+    width: 100%;
+}
+
+.slider-product-one-content-item-text {
+    padding-top: 20px;
+
+}
+
+.slider-product-one-content-item-text li {
+    margin-bottom: 6px;
+    display: block;
+}
+
+.slider-product-one-content-item-text li:nth-child(2) {
+    color: #D0021C;
+}
+
+.slider-product-one-content-item-text li:last-child h2 {
+    font-size: 14px;
+}
+
+.slider-product-one-content-item-text li:last-child i {
+    color: #FB6E2E
+}
 
