@@ -1,0 +1,71 @@
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.product-details {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-details img {
+    max-width: 320px;
+    margin: 10px;
+}
+
+.specs-table {
+    border-collapse: collapse;
+    width: 400px;
+}
+
+.specs-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.specs-table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.specs-table tr:hover {
+    background-color: #ddd;
+}
+
+/* Sản phẩm liên quan */ 
+
+.related-products {
+    /* Add some spacing between the rows of product cards */
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.related-products p{
+    font-size: 24px;
+    font-weight: bold; 
+}
+
+.reproduct-card {
+    /* Set the card's width to control the layout */
+    width: calc(20% - 20px); /* 20% width with some margin between cards */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.reproduct-name {
+    /* Make the heading larger and bold */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.reproduct-image {
+    /* Adjust the width and height of the image */
+    width: 200px;
+    height: 150px;
+    object-fit: cover; /* This will ensure the image maintains its aspect ratio while covering the specified area */
+}

@@ -213,11 +213,192 @@ nav ul li:nth-child(4) button i {
     color: #D0021C;
 }
 
-.slider-product-one-content-item-text li:last-child h2 {
+.slider-product-one-content-item-text li:nth-child(3) h2 {
     font-size: 14px;
+    color: black;
 }
 
-.slider-product-one-content-item-text li:last-child i {
+.slider-product-one-content-item-text li:nth-child(3) i {
     color: #FB6E2E
+}
+
+
+/* CSS cho modal 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    padding: 20px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #000;
+  }
+  
+  */
+
+.detail-button {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.detail-button:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------------------- Footer ---------------------------- */
+
+.footer {
+    margin: 0 auto;
+}
+
+.footer_logo img {
+    width: 100%;
+}
+
+.footer-top {
+    background-color: #F4F4F4;
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 0.7fr 0.01fr 1.6fr 0.01fr 1fr;
+    grid-template-areas: "first line second line2 last";
+}
+
+
+.footer-top-btn {
+
+    margin-left: 10%;
+    margin-bottom: auto;
+    margin-top: auto;
+    grid-area: first;
+}
+
+#footer_first_head{
+    font-weight: lighter;
+}
+
+.sold-1 {
+    border-left: 1px solid #0000004d;
+    height: 156px;
+    grid-area: line;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.sold-2{
+    border-left: 1px solid #0000004d;
+    height: 156px;
+    grid-area: line2;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.footer-bottom {
+    grid-area: second;
+    display: flex;
+}
+
+.last_para{
+    grid-area: last;
+}
+
+.footer-bottom-content {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+.footer-bottom-content-container {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.footer_about_head {
+    color: black;
+}
+
+.footer_about {
+
+    font-weight: lighter;
+    color: black;
+}
+
+.footer-bot {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+.icon_section {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.footer_bot_icons i {
+    font-size: 24px;
+    margin-right: 10px; 
+}
+
+.footer_bot_icons a:not(:last-child) {
+    margin-right: 10px; 
+}
+
+.footer-last {
+    background-color: #f1f1f1;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    grid-gap: 25px;
+    grid-template-columns: 2fr 0.01fr 3fr 1fr;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 35px; 
+}
+
+.footer-last-container {
+    text-align: center; 
 }
 
