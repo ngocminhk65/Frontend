@@ -7,7 +7,6 @@
     <title>Chi tiết sản phẩm</title>
     <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style1.css">
-    <link rel="stylesheet" href="css/style3.css">
 </head>
 
 <body>
@@ -19,7 +18,7 @@
         <div class="container">
             <ul>
                 <li> <a href="index.html"><img style="width: 200px" src="img/banner/logo.png" alt=""> </a> </li>
-                <li> <input type="text" placeholder="Bạn tìm gì..."><i class="fas fa-search"> </i> </li>
+                <li> <input type="text" placeholder="Bạn tìm gì......"><i class="fas fa-search"> </i> </li>
                 <li> <a href="login.html"> Tài khoản </a> </li>
                 <li> <a href=""><button><i class="fas fa-shopping-cart"> </i> Giỏ hàng </button> </a> </li>
             </ul>
@@ -62,44 +61,42 @@
         </div>
     </section>
     <img src="img/banner/banner8.png" alt="" class="banner-img">
-    <!-------------------Product------------------------>
+     <!-----------------------Banner-Products---------------->
 
+     <!-------------------------Filter----------------------->
+     <div id="FilterContainer">
+        <label for="priceFilter"> Giá </label>
+            <select id="priceFilter">
+                <option value="5000000">Dưới 5 triệu</option>
+                <option value="10000000">Dưới 10 triệu</option>
+                <option value="20000000">Dưới 20 triệu</option>
+                <option value="30000000">Dưới 30 triệu</option>
+                <option value="40000000">Dưới 40 triệu</option>
+                <option value="50000000">Dưới 50 triệu</option>
+                <option value="60000000">Dưới 60 triệu</option>
+            </select>
+    </div>
 
-    <div class="product-container">
-        <div class="product-details">
-            <h2 id="product-name"> </h2>
-            <img id="product-image" src="" alt="">
-            <p id="product-price"></p>
-            <p id="product-code"></p>
-            <p id="product-short-description"></p>
-            <p id="product-long-description"></p>
+    <div id="FilterContainer">
+        <label for="typeFilter"> Hãng </label>
+        <select id="typeFilter">
+            <option value="Samsung">Samsung</option>
+            <option value="Xiaomi">Xiaomi</option>
+            <option value="Apple">Apple</option>
+        </select>
+    </div>
+
+     <!-----------------------List--------------------------->
+     <section class="slider-product-one">
+        <div class="container">
+            <div class="slider-product-one-content">
+                <div class="slider-product-one-content-title" id = "product-container">
+                    <h2> Danh sách sản phẩm </h2>
+                </div>
+            </div>
         </div>
-        <p> Thông số kĩ thuật </p>
-        <table class="specs-table">
-            <tr>
-                <td id="product-screen"></td>
-            </tr>
-            <tr>
-                <td id="product-system"></td>
-            </tr>
-            <tr>
-                <td id="product-camera"></td>
-            </tr>
-            <tr>
-                <td id="product-chip"></td>
-            </tr>
-            <tr>
-                <td id="product-ram"></td>
-            </tr>
-            <tr>
-                <td id="product-batery"></td>
-            </tr>
-        </table>
-    </div>
-    <div id="related-products">
-        <p> Các sản phẩm liên quan</p>
-        <!-- Add more product cards as needed -->
-    </div>
+    </section>
+
 
      <!-----------------------------Footer----------------------------------->
      <div class="footer">
@@ -159,9 +156,7 @@
         </div>
     </div>
     </div>
-
-   <script src="js/product.js"></script>
-
+    <script src="js/phone.js"></script>
 </body>
 
 </html>

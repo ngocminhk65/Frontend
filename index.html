@@ -29,7 +29,7 @@
         <div class="container">
             <div class="menu-bar-content">
                 <ul>
-                    <li> <a href=""> <i class="fas fa-mobile"> </i> Điện thoại </a> <i class="fas fa-arrow-down"> </i>
+                    <li><a href="#" id="home-phone"><i class="fas fa-mobile"></i> Điện thoại</a> <i class="fas fa-arrow-down"></i></li>
                         <div class="submenu">
                             <ul>
                                 <li> <a href=""> Apple </a> </li>
@@ -400,6 +400,13 @@
                 // Chuyển hướng đến trang chi tiết sản phẩm và truyền tham số productId qua URL
                 window.location.href = `product-details.html?id=${productId}`;
             }
+            // Lắng nghe sự kiện click trên dòng chữ "Điện thoại"
+ document.getElementById('home-phone').addEventListener('click', function (event) {
+  // Ngăn chặn hành vi mặc định của thẻ <a> để không load lại trang
+  event.preventDefault();
+  // Chuyển đến trang mới (ví dụ: "new_page.html")
+  window.location.href = 'page_phone.html';
+});
         </script>
 </body>
 </html>
