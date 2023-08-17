@@ -3,11 +3,11 @@ const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Lấy phần tử để hiển thị danh sách sản phẩm trong trang
 const cartListElement = document.getElementById('cart-list');
-
+let totalAmount = 0;
 // Tạo nội dung danh sách sản phẩm đã đặt
 let cartListHtml = '';
 cartItems.forEach(item => {
-    console.log(item.image)
+    totalAmount += item.price * item.quantity;
     cartListHtml += `
         <li class="cart-item">
             <img src="${item.image}" alt="">
@@ -18,6 +18,10 @@ cartItems.forEach(item => {
             </div>
         </li>`;
 });
+cartListHtml += `
+    <li class="total-amount">
+        <div class="total-amount-text">Tổng số tiền: ${totalAmount}đ</div>
+    </li>`;
 cartListElement.innerHTML = cartListHtml;
 
 const placeOrderButton = document.getElementById('place-order-button');
