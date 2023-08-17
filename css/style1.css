@@ -196,6 +196,12 @@ nav ul li:nth-child(4) button i {
     width: 200px;
 }
 
+.product-name {
+    font-size: 10px; /* Đặt kích thước phù hợp cho tên sản phẩm */
+    margin: 10px 0;
+}  
+  
+
 /* ------------ slide product1 ------------ */
 
 .slider-product-one-content {

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết sản phẩm</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style1.css">
+    <title>Thế giới di động</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <ul>
                 <li> <a href="index.html"><img style="width: 200px" src="img/banner/logo.png" alt=""> </a> </li>
                 <li> <input id="searchInput" type="text" placeholder="Bạn tìm gì......"><i class="fas fa-search" id="searchIcon"> </i> </li>
-                <li> <a href="login.html"> Tài khoản </a> </li>
+                <li> <a href=""> Chào bạn </a> </li>
                 <li> <a href=""><button><i class="fas fa-shopping-cart"> </i> Giỏ hàng </button> </a> </li>
             </ul>
         </div>
@@ -61,70 +61,6 @@
         </div>
     </section>
     <img src="img/banner/banner8.png" alt="" class="banner-img">
-     <!-----------------------Banner-Products---------------->
-
-     <!-------------------------Filter----------------------->
-     <div id="FilterContainer">
-        <label for="priceFilter"> Giá </label>
-            <select id="priceFilter">
-                <option value="5000000">Dưới 5 triệu</option>
-                <option value="10000000">Dưới 10 triệu</option>
-                <option value="20000000">Dưới 20 triệu</option>
-                <option value="30000000">Dưới 30 triệu</option>
-                <option value="40000000">Dưới 40 triệu</option>
-                <option value="50000000">Dưới 50 triệu</option>
-                <option value="60000000">Dưới 60 triệu</option>
-            </select>
-    </div>
-
-    <div id="FilterContainer">
-        <label for="typeFilter"> Hãng </label>
-        <select id="typeFilter">
-            <option value="Samsung">Samsung</option>
-            <option value="Xiaomi">Xiaomi</option>
-            <option value="Apple">Apple</option>
-        </select>
-    </div>
-
-    <div id="FilterContainer">
-        <label for="priceSort">Sắp xếp theo giá</label>
-        <button id="sortPriceHighToLow">Cao đến thấp</button>
-        <button id="sortPriceLowToHigh">Thấp đến cao</button>
-    </div>
-
-     <!-----------------------List------------------------------------------>
-     <section class="slider-product-one">
-        <div class="container">
-            <div class="slider-product-one-content">
-                <div class="slider-product-one-content-title" id = "product-container">
-                    <h2> Danh sách sản phẩm </h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-------------------------List-Filter----------------------------------->
-
-    <div id="productList">
-        <div class="product-item">
-            <h2 class="product-name">${product.name}</h2>
-            <img src="${product.image_url}" alt="${product.name}" class="product-image">
-            <p class="product-price">Giá: ${product.price} đồng</p>
-            <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
-        </div>
-    </div>
-
-    <!---------------------------Search---------------------------------------->
-
-    <div id="searchProduct">
-        <div class="product-item">
-            <h2 class="product-name">${product.name}</h2>
-            <img src="${product.image_url}" alt="${product.name}" class="product-image">
-            <p class="product-price">Giá: ${product.price} đồng</p>
-            <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
-        </div>
-    </div>
-
      <!-----------------------------Footer----------------------------------->
      <div class="footer">
         <div class="footer-top">
@@ -182,8 +118,7 @@
             <p> All rights reserved © 2023 - Designed by Phạm Ngọc Minh - K65UET </p>
         </div>
     </div>
-    </div>
-    <script src="js/phone.js"></script>
-</body>
 
-</html>
+    </div>
+    <script src="js/steup.js"></script>
+</body>

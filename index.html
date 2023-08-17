@@ -18,7 +18,7 @@
         <div class="container">
             <ul>
                 <li> <a href="index.html"><img style="width: 200px" src="img/banner/logo.png" alt=""> </a> </li>
-                <li> <input type="text" placeholder="Bạn tìm gì..."><i class="fas fa-search"> </i> </li>
+                <li> <input id="searchInput" type="text" placeholder="Bạn tìm gì......"><i class="fas fa-search" id="searchIcon"> </i> </li>
                 <li> <a href="login.html"> Tài khoản </a> </li>
                 <li> <a href=""><button><i class="fas fa-shopping-cart"> </i> Giỏ hàng </button> </a> </li>
             </ul>
@@ -336,6 +336,17 @@
         </div>
     </section>
 
+    <!---------------------------Search---------------------------------------->
+
+    <div id="searchProduct">
+        <div class="product-item">
+            <h2 class="product-name">${product.name}</h2>
+            <img src="${product.image_url}" alt="${product.name}" class="product-image">
+            <p class="product-price">Giá: ${product.price} đồng</p>
+            <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
+        </div>
+    </div>
+
    <!-----------------------------Footer----------------------------------->
     <div class="footer">
                 <div class="footer-top">
@@ -383,30 +394,18 @@
                             </h4>
                         </div>
                         </div>
-        
+                                  
                     </div>
-        
+                                  
                 </div>
 
-            <div class="footer-last">
+            <div class="footer-last">        
                 <div class = "footer-last-container"> 
                     <p> All rights reserved © 2023 - Designed by Phạm Ngọc Minh - K65UET </p>
                 </div>
             </div>
         
         </div>
-        <script>
-            function openProductDetails(productId) {
-                // Chuyển hướng đến trang chi tiết sản phẩm và truyền tham số productId qua URL
-                window.location.href = `product-details.html?id=${productId}`;
-            }
-            // Lắng nghe sự kiện click trên dòng chữ "Điện thoại"
- document.getElementById('home-phone').addEventListener('click', function (event) {
-  // Ngăn chặn hành vi mặc định của thẻ <a> để không load lại trang
-  event.preventDefault();
-  // Chuyển đến trang mới (ví dụ: "new_page.html")
-  window.location.href = 'page_phone.html';
-});
-        </script>
+        <script src="js/handle.js"></script>
 </body>
 </html>

@@ -74,19 +74,29 @@ function openProductDetails(productId) {
 
 // Lọc sản phẩm theo thuộc tính
 
+const productFilter = document.getElementById("productList");
+productFilter.style.display = "none"; // Ẩn thẻ div ban đầu
+
 // Hàm để lọc sản phẩm theo thuộc tính giá và hãng sản xuất rồi hiển thị chúng 
+// Function to display filtered products based on price and type
 function displayFilteredProducts(priceThreshold, selectedType) {
     const filteredProducts = dataProduct.filter(product => 
         product.price <= priceThreshold && (!selectedType || product.type === selectedType)
     );
-    const productListContainer = document.getElementById('product-container');
-    productListContainer.innerHTML = ''; 
+    
+    const productListContainer = document.getElementById('productList');
+    productListContainer.innerHTML = '';
+    productListContainer.style.display = 'block'; // Hiển thị thẻ productListContainer
+    
+    const sliderProductOneSection = document.querySelector('.slider-product-one');
+    sliderProductOneSection.style.display = 'none'; // Ẩn thẻ slider-product-one
+    
     filteredProducts.forEach(product => {
         const productItem = document.createElement('div');
         productItem.innerHTML = `
             <h2>${product.name}</h2>
             <p>Giá: ${product.price} đồng</p>
-            <img src="${product.image_url}" alt="${product.name}" width="100">
+            <img src="${product.image_url}" alt="${product.name}" width="200 px">
             <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
         `;
         productListContainer.appendChild(productItem);
@@ -98,9 +108,90 @@ document.getElementById('priceFilter').addEventListener('change', function(event
     const selectedType = document.getElementById('typeFilter').value;
     displayFilteredProducts(selectedPrice, selectedType);
 });
-A
+
 document.getElementById('typeFilter').addEventListener('change', function(event) {
     const selectedType = event.target.value;
     const selectedPrice = parseInt(document.getElementById('priceFilter').value);
     displayFilteredProducts(selectedPrice, selectedType);
+});
+
+// Search product
+
+document.addEventListener("DOMContentLoaded", function() {
+    const productList = document.getElementById("searchProduct");
+    productList.style.display = "none"; // Ẩn thẻ div ban đầu
+  
+    document.getElementById("searchIcon").addEventListener("click", function() {
+      performSearch();
+    });
+  
+    document.getElementById("searchInput").addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        performSearch();
+      }
+    });
+  });
+  
+  function performSearch() {
+    const searchTerm = document.getElementById("searchInput").value;
+    fetch(`http://localhost:3000/api/search?q=${searchTerm}`)
+      .then(response => response.json())
+      .then(data => {
+        const productList = document.getElementById("searchProduct");
+        productList.style.display = "block"; // Hiển thị thẻ div khi có dữ liệu
+        const sliderProductOneSection = document.querySelector('.slider-product-one');
+        sliderProductOneSection.style.display = 'none'; // Ẩn thẻ slider-product-one
+        handleProducts(data);
+      }); 
+  }
+  
+  function handleProducts(products) {
+    const productList = document.getElementById("searchProduct");
+    productList.innerHTML = ""; // Xóa nội dung cũ
+    products.forEach(product => {
+      const productItem = document.createElement("div");
+      productItem.innerHTML = `
+        <h2>${product.name}</h2>
+        <p>Giá: ${product.price} đồng</p>
+        <img src="${product.image_url}" alt="${product.name}" width="200 px">
+        <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
+      `;
+      productList.appendChild(productItem);
+    });
+  }
+
+  // Sort product
+
+const sortPriceHighToLowButton = document.getElementById("sortPriceHighToLow");
+const sortPriceLowToHighButton = document.getElementById("sortPriceLowToHigh");
+
+
+function renderProducts(products) {
+    const productListContainer = document.getElementById('productList');
+    productListContainer.innerHTML = '';
+    productListContainer.style.display = 'block'; // Hiển thị thẻ productListContainer
+    
+    const sliderProductOneSection = document.querySelector('.slider-product-one');
+    sliderProductOneSection.style.display = 'none'; // Ẩn thẻ slider-product-one
+    
+    products.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.innerHTML = `
+            <h2>${product.name}</h2>
+            <p>Giá: ${product.price} đồng</p>
+            <img src="${product.image_url}" alt="${product.name}" width="200 px">
+            <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
+        `;
+        productListContainer.appendChild(productItem);
+    });
+}
+
+sortPriceHighToLowButton.addEventListener("click", function () {
+    const sortedProducts = dataProduct.slice().sort((a, b) => b.price - a.price);
+    renderProducts(sortedProducts);
+});
+
+sortPriceLowToHighButton.addEventListener("click", function () {
+    const sortedProducts = dataProduct.slice().sort((a, b) => a.price - b.price);
+    renderProducts(sortedProducts);
 });
