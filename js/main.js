@@ -65,12 +65,10 @@ loginForm.addEventListener('submit', (e) => {
     .then(response => response.text())
     .then(message => {
         console.log(message);
-        console.log(123);
         // Xử lý thông báo đăng nhập thành công hoặc lỗi
         window.location.href = '/user.html';
     })
     .catch(error => {
         console.error('Đã xảy ra lỗi:', error);
-        console.log(456);
     });
 });

@@ -76,8 +76,6 @@ function openProductDetails(productId) {
   window.location.href = `product-details.html?id=${productId}`;
 }
 
-console.log(123456789)
-
 document.addEventListener("DOMContentLoaded", function() {
   const productList = document.getElementById("searchProduct");
   productList.style.display = "none"; // Ẩn thẻ div ban đầu
