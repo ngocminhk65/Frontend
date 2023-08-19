@@ -92,7 +92,16 @@
         <button id="sortPriceLowToHigh">Thấp đến cao</button>
     </div>
 
-     <!-----------------------List------------------------------------------>
+    <div id="ViewOptionsContainer">
+        <label>Kiểu xem:</label>
+        <label for="listView">List</label>
+        <input type="radio" name="viewType" id="listView" value="list" checked>
+    
+        <label for="gridView">Grid</label>
+        <input type="radio" name="viewType" id="gridView" value="grid">
+    </div>
+
+     <!-----------------------Grid------------------------------------------>
      <section class="slider-product-one">
         <div class="container">
             <div class="slider-product-one-content">
@@ -102,7 +111,16 @@
             </div>
         </div>
     </section>
+
+    <!------------------------List------------------------------------------->
     
+    <div id="list-product">
+        <h2> Danh sách sản phẩm </h2>
+        <ul class="product-list">
+            <!-- Products will be dynamically added here by JavaScript -->
+        </ul>
+    </div>
+
     <!-------------------------List-Filter----------------------------------->
 
     <div id="productList">

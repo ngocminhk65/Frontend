@@ -85,11 +85,12 @@ function displayFilteredProducts(priceThreshold, selectedType) {
     );
     
     const productListContainer = document.getElementById('productList');
-    productListContainer.innerHTML = '';
-    productListContainer.style.display = 'block'; // Hiển thị thẻ productListContainer
+    productListContainer.style.display = 'block';
     
     const sliderProductOneSection = document.querySelector('.slider-product-one');
     sliderProductOneSection.style.display = 'none'; // Ẩn thẻ slider-product-one
+    
+    productListContainer.innerHTML = ''; // Xóa nội dung cũ của productListContainer
     
     filteredProducts.forEach(product => {
         const productItem = document.createElement('div');
@@ -195,3 +196,52 @@ sortPriceLowToHighButton.addEventListener("click", function () {
     const sortedProducts = dataProduct.slice().sort((a, b) => a.price - b.price);
     renderProducts(sortedProducts);
 });
+
+// Xử lý thay đổi kiểu xem dưới dạng List hoặc Grid
+
+const listView = document.getElementById('listView');
+const gridView = document.getElementById('gridView');
+const listProduct = document.getElementById('list-product');
+const sliderProductOne = document.querySelector('.slider-product-one');
+
+listView.addEventListener('change', () => {
+    listProduct.style.display = 'block';
+    sliderProductOne.style.display = 'none';
+});
+
+gridView.addEventListener('change', () => {
+    listProduct.style.display = 'none';
+    sliderProductOne.style.display = 'block';
+});
+
+// Kiểu xem list
+
+const listProductContainer = document.getElementById('list-product');
+
+    async function fetchAndDisplayProducts() {
+        try {
+            let productListHTML = '';
+
+            for (let productId = 1; productId <= 25; productId++) {
+                const response = await fetch(`http://localhost:3000/api/products/${productId}`);
+                const product = await response.json();
+
+                const { name, image_url, price } = product;
+
+                productListHTML += `
+                    <li class="product-item">
+                        <img src="${image_url}" alt="${name}">
+                        <h3>${name}</h3>
+                        <p>${price} đồng</p>
+                        <button class="detail-button" onclick="openProductDetails(${productId})">Chi tiết</button>
+                    </li>
+                `;
+            }
+
+            listProductContainer.querySelector('.product-list').innerHTML = productListHTML;
+        } catch (error) {
+            console.error('Error fetching and displaying products:', error);
+        }
+    }
+
+fetchAndDisplayProducts();

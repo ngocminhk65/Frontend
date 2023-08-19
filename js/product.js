@@ -121,3 +121,9 @@ document.addEventListener("DOMContentLoaded", function() {
   productList.appendChild(productItem);
   });
   }
+
+  // Lắng nghe sự kiện click trên dòng chữ "Điện thoại"
+document.getElementById('home-phone').addEventListener('click', function (event) {
+  // Ngăn chặn hành vi mặc định của thẻ <a> để không load lại trang
+  event.preventDefault();
+  window.location.href = 'page_phone.html';});

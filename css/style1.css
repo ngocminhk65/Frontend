@@ -177,6 +177,48 @@ nav ul li:nth-child(4) button i {
 }
 
 
+/* Option Wiew */
+
+#ViewOptionsContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* List */
+
+.product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.product-item {
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.product-item img {
+    width: 200px; /* Điều chỉnh kích thước ảnh */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Hiển thị mỗi sản phẩm ở một dòng riêng */
+.product-list li {
+    display: block;
+}
+
+#list-product {
+    text-align: center; /* Căn giữa nội dung trong thẻ div */
+}
+
+#list-product h2 {
+    margin-bottom: 20px; /* Tạo khoảng cách dưới tiêu đề */
+}
+
+
 /* ----------- Filter ---------------------*/
 
 
