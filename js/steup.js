@@ -59,7 +59,6 @@ function addToCart(product) {
     const productPrice = convertPriceToInt(price);
     const productImageElement = product.querySelector('.product-image');
     const imageUrl = productImageElement.getAttribute('src');
-    console.log(imageUrl)
     // Tạo hoặc lấy thông tin giỏ hàng từ localStorage
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -140,6 +139,9 @@ function openProductDetails(productId) {
 const productFilter = document.getElementById("productList");
 productFilter.style.display = "none"; // Ẩn thẻ div ban đầu
 
+const sliderProductOneSection = document.querySelector('.slider-product-one');
+sliderProductOneSection.style.display = 'none'; // Ẩn thẻ slider-product-one
+
 // Hàm để lọc sản phẩm theo thuộc tính giá và hãng sản xuất rồi hiển thị chúng 
 // Function to display filtered products based on price and type
 function displayFilteredProducts(priceThreshold, selectedType) {
@@ -153,6 +155,9 @@ function displayFilteredProducts(priceThreshold, selectedType) {
     
     const sliderProductOneSection = document.querySelector('.slider-product-one');
     sliderProductOneSection.style.display = 'none'; // Ẩn thẻ slider-product-one
+
+    const listProduct = document.getElementById("list-product"); // Ẩn thẻ list-product
+    listProduct.style.display = "none";
     
     filteredProducts.forEach(product => {
         const productItem = document.createElement('div');
@@ -205,6 +210,8 @@ document.addEventListener("DOMContentLoaded", function() {
         productList.style.display = "block"; // Hiển thị thẻ div khi có dữ liệu
         const sliderProductOneSection = document.querySelector('.slider-product-one');
         sliderProductOneSection.style.display = 'none'; // Ẩn thẻ slider-product-one
+        const listProduct = document.getElementById("list-product"); // Ẩn thẻ list-product
+        listProduct.style.display = "none";
         handleProducts(data);
       }); 
   }
@@ -238,6 +245,9 @@ function renderProducts(products) {
     
     const sliderProductOneSection = document.querySelector('.slider-product-one');
     sliderProductOneSection.style.display = 'none'; // Ẩn thẻ slider-product-one
+
+    const listProduct = document.getElementById("list-product"); // Ẩn thẻ list-product
+    listProduct.style.display = "none";
     
     products.forEach(product => {
         const productItem = document.createElement('div');
@@ -281,11 +291,15 @@ const sliderProductOne = document.querySelector('.slider-product-one');
 listView.addEventListener('change', () => {
     listProduct.style.display = 'block';
     sliderProductOne.style.display = 'none';
+    document.getElementById("productList").style.display = "none";
+    document.getElementById("searchProduct").style.display = "none";
 });
 
 gridView.addEventListener('change', () => {
     listProduct.style.display = 'none';
     sliderProductOne.style.display = 'block';
+    document.getElementById("productList").style.display = "none";
+    document.getElementById("searchProduct").style.display = "none";
 });
 
 // Kiểu xem list
@@ -306,8 +320,9 @@ const listProductContainer = document.getElementById('list-product');
                     <li class="product-item">
                         <img src="${image_url}" alt="${name}">
                         <h3>${name}</h3>
-                        <p>${price} đồng</p>
+                        <p>Giá: ${price} đồng</p>
                         <button class="detail-button" onclick="openProductDetails(${productId})">Chi tiết</button>
+                        <button class="detail-button" onclick="addToCart(this.parentElement.parentElement)">Mua</button>
                     </li>
                 `;
             }
