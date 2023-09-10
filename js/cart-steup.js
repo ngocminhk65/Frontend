@@ -31,9 +31,5 @@ placeOrderButton.addEventListener('click', () => {
     window.location.href = 'user.html';
 });
 
-/*
-// Xóa dữ liệu có khóa là 'cart' trong localStorage
-localStorage.removeItem('cart');
-*/
 
 

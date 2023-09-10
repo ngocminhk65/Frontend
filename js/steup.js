@@ -3,7 +3,6 @@ async function fetchAndRenderProducts() {
         const mainProductContainer = document.getElementById('product-container');
         
         for (let containerIndex = 1; containerIndex <= 5; containerIndex++) {
-            // Create a div for each product container
             const productContainer = document.createElement('div');
             productContainer.classList.add('slider-product-one-content-items');
 
@@ -26,7 +25,6 @@ async function fetchAndRenderProducts() {
                 productContainer.appendChild(productItem);
             }
 
-            // Add the product container to the main product container
             mainProductContainer.appendChild(productContainer);
         }
     } catch (error) {
@@ -41,12 +39,10 @@ function openProductDetails(productId) {
     window.location.href = `product-details.html?id=${productId}`;
 }
 
-// convert str -> int
 
+// Chuyển từ xâu sang số nguyên
 function convertPriceToInt(priceStr) {
-    // Remove commas and dots (thousands separators)
     const priceWithoutSeparators = priceStr.replace(/[,.]/g, '');
-    // Convert to integer
     return parseInt(priceWithoutSeparators);
 }
 

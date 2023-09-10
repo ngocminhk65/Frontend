@@ -3,7 +3,6 @@ async function fetchAndRenderProducts() {
         const mainProductContainer = document.getElementById('product-container');
         
         for (let containerIndex = 1; containerIndex <= 9; containerIndex++) {
-            // Create a div for each product container
             const productContainer = document.createElement('div');
             productContainer.classList.add('slider-product-one-content-items');
 
@@ -25,7 +24,6 @@ async function fetchAndRenderProducts() {
                 productContainer.appendChild(productItem);
             }
 
-            // Add the product container to the main product container
             mainProductContainer.appendChild(productContainer);
         }
     } catch (error) {
@@ -35,10 +33,10 @@ async function fetchAndRenderProducts() {
 
 fetchAndRenderProducts();
 
+// Hàm chuyển từ xâu sang số nguyên
 function convertPriceToInt(priceStr) {
-    // Remove commas and dots (thousands separators)
     const priceWithoutSeparators = priceStr.replace(/[,.]/g, '');
-    // Convert to integer
+    // Chuyển sang số nguyên
     return parseInt(priceWithoutSeparators);
 }
 
@@ -78,7 +76,6 @@ const productFilter = document.getElementById("productList");
 productFilter.style.display = "none"; // Ẩn thẻ div ban đầu
 
 // Hàm để lọc sản phẩm theo thuộc tính giá và hãng sản xuất rồi hiển thị chúng 
-// Function to display filtered products based on price and type
 function displayFilteredProducts(priceThreshold, selectedType) {
     const filteredProducts = dataProduct.filter(product => 
         product.price <= priceThreshold && (!selectedType || product.type === selectedType)
