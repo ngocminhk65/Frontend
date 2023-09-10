@@ -2,7 +2,7 @@ async function fetchAndRenderProducts() {
     try {
         const mainProductContainer = document.getElementById('product-container');
         
-        for (let containerIndex = 1; containerIndex <= 5; containerIndex++) {
+        for (let containerIndex = 1; containerIndex <= 9; containerIndex++) {
             // Create a div for each product container
             const productContainer = document.createElement('div');
             productContainer.classList.add('slider-product-one-content-items');
@@ -237,7 +237,7 @@ const listProductContainer = document.getElementById('list-product');
         try {
             let productListHTML = '';
 
-            for (let productId = 1; productId <= 25; productId++) {
+            for (let productId = 1; productId <= 46; productId++) {
                 const response = await fetch(`http://localhost:3000/api/products/${productId}`);
                 const product = await response.json();
 
