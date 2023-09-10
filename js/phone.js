@@ -234,7 +234,7 @@ const listProductContainer = document.getElementById('list-product');
         try {
             let productListHTML = '';
 
-            for (let productId = 1; productId <= 46; productId++) {
+            for (let productId = 1; productId <= 45; productId++) {
                 const response = await fetch(`http://localhost:3000/api/products/${productId}`);
                 const product = await response.json();
 
