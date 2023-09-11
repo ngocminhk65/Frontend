@@ -49,6 +49,7 @@ function convertPriceToInt(priceStr) {
 // Đặt hàng
 
 function addToCart(product) {
+    console.log("Hello");
     // Lấy thông tin sản phẩm
     const productName = product.querySelector('.product-name').textContent;
     let price = product.querySelector('.product-price').textContent;
@@ -158,11 +159,11 @@ function displayFilteredProducts(priceThreshold, selectedType) {
     filteredProducts.forEach(product => {
         const productItem = document.createElement('div');
         productItem.innerHTML = `
-            <h2>${product.name}</h2>
-            <p>Giá: ${product.price} đồng</p>
-            <img src="${product.image_url}" alt="${product.name}" width="200 px">
-            <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
-            <button class="detail-button" onclick="addToCart(this.parentElement.parentElement)">Mua</button>
+            <h2 class = "product-name" style="font-size: 16px;">${product.name}</h2>
+           <p class = "product-price">Giá: ${product.price} đồng</p>
+           <img src="${product.image_url}" alt="" width="200 px " class="product-image">
+           <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
+           <button class="detail-button" onclick="addToCart(this.parentElement.parentElement)">Mua</button>
         `;
         productListContainer.appendChild(productItem);
     });
@@ -218,11 +219,11 @@ document.addEventListener("DOMContentLoaded", function() {
     products.forEach(product => {
       const productItem = document.createElement("div");
       productItem.innerHTML = `
-        <h2>${product.name}</h2>
-        <p>Giá: ${product.price} đồng</p>
-        <img src="${product.image_url}" alt="${product.name}" width="200 px">
-        <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
-        <button class="detail-button" onclick="addToCart(this)">Mua</button>
+         <h2 class = "product-name" style="font-size: 16px;">${product.name}</h2>
+         <p class = "product-price">Giá: ${product.price} đồng</p>
+         <img src="${product.image_url}" alt="" width="200 px " class="product-image">
+         <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
+         <button class="detail-button" onclick="addToCart(this.parentElement.parentElement)">Mua</button>
       `;
       productList.appendChild(productItem);
     });
@@ -248,11 +249,11 @@ function renderProducts(products) {
     products.forEach(product => {
         const productItem = document.createElement('div');
         productItem.innerHTML = `
-            <h2>${product.name}</h2>
-            <p>Giá: ${product.price} đồng</p>
-            <img src="${product.image_url}" alt="${product.name}" width="200 px">
+            <h2 class = "product-name" style="font-size: 16px;">${product.name}</h2>
+            <p class = "product-price">Giá: ${product.price} đồng</p>
+            <img src="${product.image_url}" alt="" width="200 px " class="product-image">
             <button class="detail-button" onclick="openProductDetails(${product.id})">Chi tiết</button>
-            <button class="detail-button" onclick="addToCart(this)">Mua</button>
+            <button class="detail-button" onclick="addToCart(this.parentElement.parentElement)">Mua</button>
         `;
         productListContainer.appendChild(productItem);
     });
@@ -314,9 +315,9 @@ const listProductContainer = document.getElementById('list-product');
 
                 productListHTML += `
                     <li class="product-item">
-                        <img src="${image_url}" alt="${name}">
-                        <h3>${name}</h3>
-                        <p>Giá: ${price} đồng</p>
+                        <img src="${image_url}" alt="" class="product-image">
+                        <h3 class = "product-name" style="font-size: 16px;">${name}</h3>
+                        <p class = "product-price">Giá: ${price} đồng</p>
                         <button class="detail-button" onclick="openProductDetails(${productId})">Chi tiết</button>
                         <button class="detail-button" onclick="addToCart(this.parentElement.parentElement)">Mua</button>
                     </li>
