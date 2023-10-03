@@ -27,7 +27,7 @@ registerForm.addEventListener('submit', (e) => {
         password: password
     };
 
-    fetch('http://localhost:3000/register', { // Sửa đường dẫn của fetch thành http://localhost:3000/register
+    fetch('http://localhost:3000/register', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

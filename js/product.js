@@ -48,6 +48,9 @@ let i;
 if(type == "Samsung") i = 0;
 if(type == "Apple") i = 10;
 if(type == "Xiaomi") i = 17;
+if(type == "Vivo") i = 25;
+if(type == "Oppo") i = 33;
+if(type == "Realme") i = 41;
 // Gửi yêu cầu API đến backend để nhận các sản phẩm liên quan
 fetch(apiURL)
   .then((response) => response.json())
@@ -73,7 +76,7 @@ fetch(apiURL)
 
 function openProductDetails(productId) {
   // Chuyển hướng đến trang chi tiết sản phẩm và truyền tham số productId qua URL
-  window.location.href = `product-details.html?id=${productId}`;
+  window.location.href = `product_details.html?id=${productId}`;
 }
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -24,7 +24,7 @@ header {
     margin-bottom: -4px;
 }
 
-/* ----nav---- */
+/* -------nav------- */
 
 nav {
     background-color: #FFD400;
@@ -115,39 +115,8 @@ nav ul li:nth-child(4) button i {
     padding: 15px 6px;
 }
 
-/* ---- submenu ---- */
-
 .menu-bar-content ul li {
     position: relative;
-}
-
-.submenu {
-    position: absolute;
-    background-color: #F4F4F4;
-    width: 120px;
-    height: auto;
-    left: 0;
-    top: 100%;
-    padding: 12px;
-    display: none;
-    z-index: 10;
-}
-
-.submenu ul {
-    display: flex;
-    flex-direction: column;
-}
-
-.submenu ul li {
-    padding: 6px 0;
-}
-
-.submenu ul li:hover {
-    background: none;
-}
-
-.menu-bar-content ul li:hover .submenu{
-    display: block;
 }
 
 /* ------------ SlideShow ----------- */
@@ -199,7 +168,7 @@ nav ul li:nth-child(4) button i {
 }
 
 .product-item img {
-    width: 200px; /* Điều chỉnh kích thước ảnh */
+    width: 200px; 
     height: auto;
     display: block;
     margin: 0 auto 10px;
@@ -244,7 +213,7 @@ nav ul li:nth-child(4) button i {
 }  
   
 
-/* ------------ slide product1 ------------ */
+/* ------------ Grid ------------ */
 
 .slider-product-one-content {
     background-color: #FFD400;
@@ -289,48 +258,6 @@ nav ul li:nth-child(4) button i {
 .slider-product-one-content-item-text li:nth-child(3) i {
     color: #FB6E2E
 }
-
-/* CSS cho modal 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); 
-    padding: 20px;
-  }
-  
-  .close {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #888;
-    cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #000;
-  }
-  
-  */
 
 .detail-button {
     background-color: #007BFF;

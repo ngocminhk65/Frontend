@@ -67,7 +67,7 @@ fetchProducts();
 
 function openProductDetails(productId) {
     // Chuyển hướng đến trang chi tiết sản phẩm và truyền tham số productId qua URL
-    window.location.href = `product-details.html?id=${productId}`;
+    window.location.href = `product_details.html?id=${productId}`;
 }
 
 // Lọc sản phẩm theo thuộc tính

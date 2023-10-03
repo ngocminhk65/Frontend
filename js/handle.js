@@ -2,7 +2,7 @@
 
 function openProductDetails(productId) {
     // Chuyển hướng đến trang chi tiết sản phẩm và truyền tham số productId qua URL
-    window.location.href = `product-details.html?id=${productId}`;
+    window.location.href = `product_details.html?id=${productId}`;
 }
 // Lắng nghe sự kiện click trên dòng chữ "Điện thoại"
 document.getElementById('home-phone').addEventListener('click', function (event) {
